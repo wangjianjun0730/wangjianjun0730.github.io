@@ -1,12 +1,12 @@
 # Basic
-title: W_Blog
-subtitle: Thinking will not overcome fear but action will.
+title: W
+subtitle: Created by wang jianjun.
 #welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
-welcome_message: <p>欢迎来到王建军的个人博客，如有错误，可加我微信“伟大领袖毛主席教导我们说:”告知，或者发送邮件至wangjianjun0730@126.com</p>
-description: 成长是一条并不平坦的路，但这条路必须自己来走.
-creator: <a href="http://onev.cat">@onevcat</a>
+welcome_message: 欢迎来到王建军的个人博客！如有错误，可加我微信“伟大领袖毛主席教导我们说:”告知或发送邮件至wangjianjun0730@126.com
+description: 成长是一条并不平坦的路
+creator: <a>wangjianjun</a>
 
-url: "http://vno.onevcat.com"
+url: "https://wangjianjun0730.github.io"
 
 permalink: /:year/:month/:title/
 
@@ -19,7 +19,7 @@ cover_color: red
 # The blog button should not be removed.
 blog_button:
     title: Blog
-    description: Visit blog
+    description: 进入Blog
 
 # Navigation buttons in the front page.
 nav:
@@ -38,7 +38,7 @@ comment:
     
 # Social
 social:
-    github: wangjianjun0730
+    #github: wangjianjun0730
     mail: wangjianjun0730@126.com
 
 # Google Analytics
