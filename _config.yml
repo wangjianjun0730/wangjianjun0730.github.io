@@ -1,8 +1,9 @@
 # Basic
-title: Vno Jekyll
-subtitle: A blog-orientation theme for Jekyll
-welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
-description: Vno Jekyll is a port of my Ghost theme vno.
+title: W_Blog
+subtitle: Thinking will not overcome fear but action will.
+#welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
+welcome_message: <p>欢迎来到王建军的个人博客，如有错误，可加我微信“伟大领袖毛主席教导我们说:”告知，或者发送邮件至wangjianjun0730@126.com</p>
+description: 成长是一条并不平坦的路，但这条路必须自己来走.
 creator: <a href="http://onev.cat">@onevcat</a>
 
 url: "http://vno.onevcat.com"
@@ -22,7 +23,7 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
+#   - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
@@ -37,11 +38,8 @@ comment:
     
 # Social
 social:
-    weibo: onevcat
-    github: onevcat
-    twitter: onevcat
-    gplus: 107108267983477358170
-    mail: onev@onevcat.com
+    github: wangjianjun0730
+    mail: wangjianjun0730@126.com
 
 # Google Analytics
 ga:
