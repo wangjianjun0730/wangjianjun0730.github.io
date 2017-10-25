@@ -13,17 +13,19 @@ date: 2017-10-24 19:00:24.000000000 +08:00
 
 - **1.打开创建代码仓库页面**
  
-![](../assets/images/Snip20171024_7.png)
+![]({{site.url}}/img/Snip20171024_7.png)
 
 >注意：创建的仓库名称必须为 \"github账号名称.github.io\" 的形式，建议仓库初始化的选项需要勾上。有很多博客并没勾选此项，在创建好仓库后本地安装 GitHub Desktop 然后通过命令行的方式处理，本人能力问题并没有成功，走了很多冤枉路感觉很繁琐，更何况github网页改版，很多地方都有不一致的情况。
 
-![](../assets/images/Snip20171024_8.png)
+
+![]({{site.url}}/img/Snip20171024_8.png)
+
 
 	点击左上角Setting下载页面模板
 
-![](../assets/images/Snip20171024_12.png)
+![]({{site.url}}/img/Snip20171024_12.png)
 
-![](../assets/images/Snip20171024_11.png)
+![]({{site.url}}/img/Snip20171024_11.png)
 
 	选择Select Theme 然后提交（后面的的图我就不贴了）
 

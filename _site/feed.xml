@@ -5,8 +5,8 @@
     <description>成长是一条并不平坦的路</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Oct 2017 09:45:53 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Oct 2017 09:45:53 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Oct 2017 10:31:20 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Oct 2017 10:31:20 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -26,20 +26,20 @@
   &lt;li&gt;&lt;strong&gt;1.打开创建代码仓库页面&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;注意：创建的仓库名称必须为 &quot;github账号名称.github.io&quot; 的形式，建议仓库初始化的选项需要勾上。有很多博客并没勾选此项，在创建好仓库后本地安装 GitHub Desktop 然后通过命令行的方式处理，本人能力问题并没有成功，走了很多冤枉路感觉很繁琐，更何况github网页改版，很多地方都有不一致的情况。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;点击左上角Setting下载页面模板
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;选择Select Theme 然后提交（后面的的图我就不贴了）
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
