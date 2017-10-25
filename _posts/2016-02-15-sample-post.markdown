@@ -129,6 +129,12 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
 
 	![]({{site.url}}/img/Snip20171024_27.png)
 
+- 7.启动jekyll可能报错如下：
+
+	![]({{site.url}}/img/Snip20171024_5.png)
+	
+	
+
 
 ## 四.评论功能设置
 ---
