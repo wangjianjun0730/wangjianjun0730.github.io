@@ -1,7 +1,7 @@
 ---
 layout: post
 title: github pages + jekyll制作个人BLOG详细流程
-date: 2017-10-24 19:00:24.000000000 +08:00
+date: 2017-10-25 11:00:24.000000000 +08:00
 ---
 ## 一.	Github Pages介绍
 ---
