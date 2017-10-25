@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Hello World - Vno
-date: 2016-02-16 15:32:24.000000000 +09:00
+title: Jenkins+github+fir持续集成iOS项目
+date: 2017-10-25 15:15:24.000000000 +08:00
 ---
 
 #### What's this
