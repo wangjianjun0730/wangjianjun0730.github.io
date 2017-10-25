@@ -5,19 +5,20 @@
     <description>成长是一条并不平坦的路</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Oct 2017 10:34:25 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Oct 2017 10:34:25 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Oct 2017 11:08:11 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Oct 2017 11:08:11 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>github pages + jekyll制作个人BLOG详细流程</title>
         <description>&lt;h2 id=&quot;一-github-pages介绍&quot;&gt;一.	Github Pages介绍&lt;/h2&gt;
-
+&lt;hr /&gt;
 &lt;blockquote&gt;
   &lt;p&gt;GitHub Pages 可以为你或者你的项目提供介绍网页，它是由 GitHub 官方托管和发布的。你可以使用 GitHub 提供的页面自动生成器，也可以做个人博客，是个轻量级的博客系统。它不需你自己搭建服务器，但是每一个github账号只能制作一个首页，下面讲讲详细的制作流程。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;二-github二级域名创建&quot;&gt;二.	Github二级域名创建&lt;/h2&gt;
+&lt;hr /&gt;
 &lt;blockquote&gt;
   &lt;p&gt;这一步Github Pages官网首页就有图文说明，但前提是你必须注册申请github账号,但是作为码农，github账号还是用该有的。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -70,6 +71,7 @@
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;三jekyll本地环境搭建待完善&quot;&gt;三.Jekyll本地环境搭建（待完善）&lt;/h2&gt;
+&lt;hr /&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a. Jekyll是一种简单的、适用于博客的、静态网站生成引擎。它使用一个模板目录作为网站布局的基础框架，支持Markdown、Textile等标记语言的解析，提供了模板、变量、插件等功能，最终生成一个完整的静态Web站点。说白了就是，只要安装Jekyll的规范和结构，不用写html，就可以生成网站。
 b. Jekyll的核心其实就是一个文本的转换引擎，用你最喜欢的标记语言写文档，可以是Markdown、Textile或者HTML等等，再通过layout将文档拼装起来，根据你设置的URL规则来展现，这些都是通过严格的配置文件来定义，最终的产出就是web页面。
@@ -148,10 +150,8 @@ b. Jekyll的核心其实就是一个文本的转换引擎，用你最喜欢的�
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-MacBook-Pro:~ pingankeji$ cd /Users/pingankeji/wangjianjun0730.github.io
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MacBook-Pro:~ pingankeji$ cd /Users/pingankeji/wangjianjun0730.github.io
 MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
-
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -167,6 +167,7 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;四评论功能设置&quot;&gt;四.评论功能设置&lt;/h2&gt;
+&lt;hr /&gt;
 
 &lt;ul&gt;
   &lt;li&gt;1.登录Disqus网站注册一个账号（开vpn比较快点）&lt;/li&gt;
@@ -190,26 +191,28 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;五主题细节修改&quot;&gt;五.主题细节修改&lt;/h2&gt;
+&lt;hr /&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;一切顺利的话，你讲看到下面这个界面。接下来就将网站信息都改成自己的吧。 - 1.修改个人信息   博客名、描述、跳转链接的修改的主要文件路径是在根目录下的文件：_config.yml    - 2.修改背景图片   头像和背景存放路径：代码仓库根目录-&amp;gt;assets-&amp;gt;images，直接替换文件就好了，不过要保持文件名一样。   				 （在编写markdown时使用这些图片可以直接输入如： \!\[](../assets/images/Snip20171024_27.png)  &quot;../ 表示上级目录&quot;）
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_28.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;六写文章&quot;&gt;六.写文章&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;1.存放文章位置&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_29.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;用Jekyll写博客，一篇文章就是一个文件，所有需要发表的文章都要放在_posts文件夹里。文件的命名要按YYYY-MM-DD-文章标题.markdown这种格式来，后缀使用.md也可以。文件名一旦确定下来，就不要轻易更改，因为Jekyll结合的评论功能，会根据文件名去查找这篇文章的评论内容。同一篇文章只是更改了文件名，如下：&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;2.写文章工具 : 推荐用Mou吧&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.存放文章位置&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_29.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;用Jekyll写博客，一篇文章就是一个文件，所有需要发表的文章都要放在_posts文件夹里。文件的命名要按YYYY-MM-DD-文章标题.markdown这种格式来，后缀使用.md也可以。文件名一旦确定下来，就不要轻易更改，因为Jekyll结合的评论功能，会根据文件名去查找这篇文章的评论内容。同一篇文章只是更改了文件名，如下：&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;2.写文章工具 : 自己在网上搜一款适合自己的markdown编辑器吧，这里不再赘述了。&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;3.书写格式&lt;/p&gt;
 
@@ -217,36 +220,48 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
       &lt;p&gt;在文章的开头，我们需要先设置头信息。头信息需要根据YAML的格式写在两行三虚线之间。&lt;/p&gt;
     &lt;/blockquote&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ---
-  layout: post
-  title: 这个是标题
-  date: 2016-04-16 11:11:11.000000000 +09:00
-  tags: Jekyll Github
-  ---
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      ---
+      layout: post
+      title: 这个是标题
+      date: 2016-04-16 11:11:11.000000000 +09:00
+      tags: Jekyll Github
+      ---
  		
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;blockquote&gt;
-      &lt;p&gt;layout：指文章布局的类型，需要使用指定的模版文件，模版文件放在_layouts目录下，暂时用post.html。page.html模板比&lt;br /&gt;post.html模板少了更早的文章和评论模块。有能力的也可以自己写一个文章页面的布局模板文件。&lt;br /&gt;
+      &lt;p&gt;layout：指文章布局的类型，需要使用指定的模版文件，模版文件放在_layouts目录下，暂时用post.html。page.html模板比post.html模板少了更早的文章和评论模块。有能力的也可以自己写一个文章页面的布局模板文件。&lt;br /&gt;
 title：文章的标题。&lt;br /&gt;
 date：发布文章的时间。（后面的一串零零零好像不能省）&lt;br /&gt;
 tags：标签，一篇文章可以设置多个标签，使用空格分割。&lt;/p&gt;
     &lt;/blockquote&gt;
-
-    &lt;hr /&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;基本上一篇文章只要用到以上一些信息就可以了，当然还有其它的变量可以设置，具体用法可以在Jekyll网站上查看。&lt;br /&gt;
-  终于可以开始写文章了，一劳永逸，以后再也不用关心那些破事了，将心思放在写文章上。&lt;br /&gt;
-  为了写出漂亮排版的文章，需要多注意下Markdown的语法说明，第一次运行Mou软件的时候，会有弹出使用语法说明，如果不小心关了，也可以在软件的菜单栏里找到 Help -&amp;gt; Mou Help :&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_32.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;在写文章的时候，在本地仓库目录下终端执行 jekyll serve，开启Jekyll本地环境，可以一边写博文，一边刷新http://127.0.0.1:4000/地址查看实时效果。写完提交git，就完事啦。&lt;/p&gt;
-    &lt;/blockquote&gt;
   &lt;/li&gt;
+  &lt;li&gt;4.文章图片导入（图片导入是个坑）&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171025_3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;在本地仓库新建一个资源文件夹，我新建的文件夹名称是img。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171025_1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;{{site.url}}表示站点的根目录&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;七结束语&quot;&gt;七.结束语&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;基本上一篇文章只要用到以上一些信息就可以了，当然还有其它的变量可以设置，具体用法可以在Jekyll网站上查看。&lt;br /&gt;
+终于可以开始写文章了，一劳永逸，以后再也不用关心那些破事了，将心思放在写文章上。&lt;br /&gt;
+	为了写出漂亮排版的文章，需要多注意下Markdown的语法说明，第一次运行Mou软件的时候，会有弹出使用语法说明，如果不小心关了，也可以在软件的菜单栏里找到 Help -&amp;gt; Mou Help :&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_32.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在写文章的时候，在本地仓库目录下终端执行 jekyll serve，开启Jekyll本地环境，可以一边写博文，一边刷新http://127.0.0.1:4000/地址查看实时效果。写完提交git，就完事啦。&lt;/p&gt;
 </description>
         <pubDate>Tue, 24 Oct 2017 19:00:24 +0800</pubDate>
         <link>http://localhost:4000/2017/10/sample-post/</link>
