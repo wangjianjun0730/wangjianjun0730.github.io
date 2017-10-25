@@ -5,8 +5,8 @@
     <description>成长是一条并不平坦的路</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Oct 2017 09:32:13 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Oct 2017 09:32:13 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Oct 2017 09:45:53 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Oct 2017 09:45:53 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -129,13 +129,13 @@ b. Jekyll的核心其实就是一个文本的转换引擎，用你最喜欢的�
   &lt;li&gt;
     &lt;p&gt;3.下载模板并替换本地仓库模板文件&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;https://github.com/wangjianjun0730/wangjianun0730.github.io/raw/master/assets/images/Snip20171024_17.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;./assets/images/Snip20171024_17.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
     &lt;blockquote&gt;
       &lt;p&gt;我下载的是vno-jekyll,看下图&lt;/p&gt;
     &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;img src=&quot;https://wangjianun0730.github.io/assets/images/Snip20171024_23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;../_site/assets/images/Snip20171024_23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
     &lt;blockquote&gt;
       &lt;p&gt;解压下载好的模板压缩包，将包内除了.gitignore,README.md文件外的所有文件复制，粘贴到本地仓库中&lt;/p&gt;
