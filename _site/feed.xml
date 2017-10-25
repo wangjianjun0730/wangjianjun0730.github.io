@@ -5,8 +5,8 @@
     <description>成长是一条并不平坦的路</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Oct 2017 11:10:13 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Oct 2017 11:10:13 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Oct 2017 11:28:36 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Oct 2017 11:28:36 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -262,6 +262,11 @@ tags：标签，一篇文章可以设置多个标签，使用空格分割。&lt;
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_32.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在写文章的时候，在本地仓库目录下终端执行 jekyll serve，开启Jekyll本地环境，可以一边写博文，一边刷新http://127.0.0.1:4000/地址查看实时效果。写完提交git，就完事啦。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/c04475ba80e4&quot;&gt;参考文章：使用Jekyll搭建自己的博客-全教程&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://louisly.com/2016/04/used-jekyll-to-create-my-github-blog/&quot;&gt;参考文章：用Jekyll搭建的Github Pages个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         <pubDate>Wed, 25 Oct 2017 11:00:24 +0800</pubDate>
         <link>http://localhost:4000/2017/10/sample-post/</link>

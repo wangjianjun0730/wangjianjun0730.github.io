@@ -216,3 +216,6 @@ tags：标签，一篇文章可以设置多个标签，使用空格分割。
 ![]({{site.url}}/img/Snip20171024_32.png)
 	
 在写文章的时候，在本地仓库目录下终端执行 jekyll serve，开启Jekyll本地环境，可以一边写博文，一边刷新http://127.0.0.1:4000/地址查看实时效果。写完提交git，就完事啦。
+
+> [参考文章：使用Jekyll搭建自己的博客-全教程](http://www.jianshu.com/p/c04475ba80e4)<br/>
+> [参考文章：用Jekyll搭建的Github Pages个人博客](http://louisly.com/2016/04/used-jekyll-to-create-my-github-blog/)
