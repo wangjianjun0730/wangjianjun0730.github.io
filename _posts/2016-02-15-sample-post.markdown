@@ -45,7 +45,7 @@ date: 2017-10-24 19:00:24.000000000 +08:00
 
 - 4.将这个html文件直接放入刚才克隆的本地仓库，然后push到远程仓库中。打开浏览器输入"github账号名称.github.io"就能看到我们刚才上传的HTML页面了。
 
-![](../assets/images/Snip20171024_16.png)
+![]({{site.url}}/img/Snip20171024_16.png)
 
 > 到这里，我们只完成了一般，这个页面很粗糙，并不是我们想要的。我们不仅想看到华丽的页面展示，还想用markdown书写笔记。请继续往下看...
 
@@ -100,15 +100,15 @@ date: 2017-10-24 19:00:24.000000000 +08:00
 	
 - 3.下载模板并替换本地仓库模板文件
 
-	![](./assets/images/Snip20171024_17.png)
+	![]({{site.url}}/img/Snip20171024_17.png)
 	
 	>我下载的是vno-jekyll,看下图
 	
-	![](../_site/assets/images/Snip20171024_23.png)
+	![]({{site.url}}/img/Snip20171024_23.png)
 	
 	>解压下载好的模板压缩包，将包内除了.gitignore,README.md文件外的所有文件复制，粘贴到本地仓库中
 	
-	![](../assets/images/Snip20171024_25.png)
+	![]({{site.url}}/img/Snip20171024_25.png)
 	
 
 
@@ -126,7 +126,7 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
 
 - 6.用git电脑终端将这些代码都上传到git代码仓库。浏览器输入(你的用户名).github.io，就可以看到你的成效了。
 
-	![](../assets/images/Snip20171024_27.png)
+	![]({{site.url}}/img/Snip20171024_27.png)
 
 
 ## 四.评论功能设置
@@ -136,7 +136,7 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
 - 3.点击Start Using Engage
 - 4.设置自己的Disqus的URL
 
-![](../assets/images/Snip20171024_30.png)
+![]({{site.url}}/img/Snip20171024_30.png)
 
 
 - 5.设置根目录下_config.yml文件的disqus的URL
@@ -158,16 +158,16 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
   				
 （在编写markdown时使用这些图片可以直接输入如： \!\[](../assets/images/Snip20171024_27.png)  "../ 表示上级目录"）
 	
-![](../assets/images/Snip20171024_28.png)
+![]({{site.url}}/img/Snip20171024_28.png)
 
 ## 六.写文章
 - 1.存放文章位置
 
- ![](../assets/images/Snip20171024_29.png)
+ ![]({{site.url}}/img/Snip20171024_29.png)
 
  > 用Jekyll写博客，一篇文章就是一个文件，所有需要发表的文章都要放在_posts文件夹里。文件的命名要按YYYY-MM-DD-文章标题.markdown这种格式来，后缀使用.md也可以。文件名一旦确定下来，就不要轻易更改，因为Jekyll结合的评论功能，会根据文件名去查找这篇文章的评论内容。同一篇文章只是更改了文件名，如下：
 
-![](../assets/images/Snip20171024_31.png)
+![]({{site.url}}/img/Snip20171024_31.png)
 
 - 2.写文章工具 : 推荐用Mou吧
 - 3.书写格式
@@ -194,6 +194,6 @@ tags：标签，一篇文章可以设置多个标签，使用空格分割。
 	终于可以开始写文章了，一劳永逸，以后再也不用关心那些破事了，将心思放在写文章上。<br>
 	为了写出漂亮排版的文章，需要多注意下Markdown的语法说明，第一次运行Mou软件的时候，会有弹出使用语法说明，如果不小心关了，也可以在软件的菜单栏里找到 Help -> Mou Help :
 	
-	![](../assets/images/Snip20171024_32.png)
+	![]({{site.url}}/img/Snip20171024_32.png)
 	
   > 在写文章的时候，在本地仓库目录下终端执行 jekyll serve，开启Jekyll本地环境，可以一边写博文，一边刷新http://127.0.0.1:4000/地址查看实时效果。写完提交git，就完事啦。

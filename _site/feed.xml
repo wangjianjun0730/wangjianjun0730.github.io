@@ -5,8 +5,8 @@
     <description>成长是一条并不平坦的路</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Oct 2017 10:31:20 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Oct 2017 10:31:20 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Oct 2017 10:34:25 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Oct 2017 10:34:25 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -63,7 +63,7 @@
   &lt;li&gt;4.将这个html文件直接放入刚才克隆的本地仓库，然后push到远程仓库中。打开浏览器输入”github账号名称.github.io”就能看到我们刚才上传的HTML页面了。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;到这里，我们只完成了一般，这个页面很粗糙，并不是我们想要的。我们不仅想看到华丽的页面展示，还想用markdown书写笔记。请继续往下看…&lt;/p&gt;
@@ -129,19 +129,19 @@ b. Jekyll的核心其实就是一个文本的转换引擎，用你最喜欢的�
   &lt;li&gt;
     &lt;p&gt;3.下载模板并替换本地仓库模板文件&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;./assets/images/Snip20171024_17.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_17.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
     &lt;blockquote&gt;
       &lt;p&gt;我下载的是vno-jekyll,看下图&lt;/p&gt;
     &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;img src=&quot;../_site/assets/images/Snip20171024_23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
     &lt;blockquote&gt;
       &lt;p&gt;解压下载好的模板压缩包，将包内除了.gitignore,README.md文件外的所有文件复制，粘贴到本地仓库中&lt;/p&gt;
     &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_25.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_25.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;4.开启Jekyll环境，在本地仓库目录下执行:jekyll serve，看见下面输出代表开启成功。&lt;/p&gt;
@@ -162,7 +162,7 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
   &lt;li&gt;
     &lt;p&gt;6.用git电脑终端将这些代码都上传到git代码仓库。浏览器输入(你的用户名).github.io，就可以看到你的成效了。&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_27.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_27.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -175,7 +175,7 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
   &lt;li&gt;4.设置自己的Disqus的URL&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_30.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_30.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -193,20 +193,20 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;一切顺利的话，你讲看到下面这个界面。接下来就将网站信息都改成自己的吧。 - 1.修改个人信息   博客名、描述、跳转链接的修改的主要文件路径是在根目录下的文件：_config.yml    - 2.修改背景图片   头像和背景存放路径：代码仓库根目录-&amp;gt;assets-&amp;gt;images，直接替换文件就好了，不过要保持文件名一样。   				 （在编写markdown时使用这些图片可以直接输入如： \!\[](../assets/images/Snip20171024_27.png)  &quot;../ 表示上级目录&quot;）
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_28.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_28.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;六写文章&quot;&gt;六.写文章&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;1.存放文章位置&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_29.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_29.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;用Jekyll写博客，一篇文章就是一个文件，所有需要发表的文章都要放在_posts文件夹里。文件的命名要按YYYY-MM-DD-文章标题.markdown这种格式来，后缀使用.md也可以。文件名一旦确定下来，就不要轻易更改，因为Jekyll结合的评论功能，会根据文件名去查找这篇文章的评论内容。同一篇文章只是更改了文件名，如下：&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;2.写文章工具 : 推荐用Mou吧&lt;/li&gt;
@@ -240,7 +240,7 @@ tags：标签，一篇文章可以设置多个标签，使用空格分割。&lt;
   为了写出漂亮排版的文章，需要多注意下Markdown的语法说明，第一次运行Mou软件的时候，会有弹出使用语法说明，如果不小心关了，也可以在软件的菜单栏里找到 Help -&amp;gt; Mou Help :&lt;/p&gt;
     &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;img src=&quot;../assets/images/Snip20171024_32.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_32.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
     &lt;blockquote&gt;
       &lt;p&gt;在写文章的时候，在本地仓库目录下终端执行 jekyll serve，开启Jekyll本地环境，可以一边写博文，一边刷新http://127.0.0.1:4000/地址查看实时效果。写完提交git，就完事啦。&lt;/p&gt;
