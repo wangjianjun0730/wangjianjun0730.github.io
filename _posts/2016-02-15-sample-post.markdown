@@ -98,11 +98,11 @@ date: 2017-10-24 19:00:24.000000000 +08:00
 	
 - 3.下载模板并替换本地仓库模板文件
 
-	![](../assets/images/Snip20171024_17.png)
+	![](https://github.com/wangjianjun0730/wangjianun0730.github.io/raw/master/assets/images/Snip20171024_17.png)
 	
 	>我下载的是vno-jekyll,看下图
 	
-	![](../assets/images/Snip20171024_23.png)
+	![](https://wangjianun0730.github.io/assets/images/Snip20171024_23.png)
 	
 	>解压下载好的模板压缩包，将包内除了.gitignore,README.md文件外的所有文件复制，粘贴到本地仓库中
 	
