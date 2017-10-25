@@ -5,8 +5,8 @@
     <description>成长是一条并不平坦的路</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Oct 2017 14:16:41 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Oct 2017 14:16:41 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Oct 2017 14:25:51 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Oct 2017 14:25:51 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -203,16 +203,14 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;1.修改个人信息
+  &lt;li&gt;1.修改个人信息&lt;br /&gt;
   博客名、描述、跳转链接的修改的主要文件路径是在根目录下的文件：_config.yml
   &lt;/li&gt;
-  &lt;li&gt;2.修改背景图片
-  头像和背景存放路径：代码仓库根目录-&amp;gt;assets-&amp;gt;images，直接替换文件就好了，不过要保持文件名一样。
-  				
-（在编写markdown时使用这些图片可以直接输入如： ![](../assets/images/Snip20171024_27.png)  “../ 表示上级目录”）&lt;/li&gt;
+  &lt;li&gt;2.修改背景图片&lt;br /&gt;
+  头像和背景存放路径：代码仓库根目录-&amp;gt;assets-&amp;gt;images，直接替换文件就好了，不过要保持文件名一样.（在编写markdown时使用这些图片可以直接输入如： {{site.url}}/img/Snip20171024_29.png)在下面会讲到）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171024_28.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171025_7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;六写文章&quot;&gt;六.写文章&lt;/h2&gt;
 &lt;hr /&gt;

@@ -162,15 +162,13 @@ MacBook-Pro:wangjianjun0730.github.io pingankeji$ jekyll serve
 
 >一切顺利的话，你讲看到下面这个界面。接下来就将网站信息都改成自己的吧。
 
-- 1.修改个人信息
+- 1.修改个人信息<br/>
   博客名、描述、跳转链接的修改的主要文件路径是在根目录下的文件：_config.yml
   
-- 2.修改背景图片
-  头像和背景存放路径：代码仓库根目录->assets->images，直接替换文件就好了，不过要保持文件名一样。
-  				
-（在编写markdown时使用这些图片可以直接输入如： \!\[](../assets/images/Snip20171024_27.png)  "../ 表示上级目录"）
+- 2.修改背景图片<br/>
+  头像和背景存放路径：代码仓库根目录->assets->images，直接替换文件就好了，不过要保持文件名一样.（在编写markdown时使用这些图片可以直接输入如： \{\{site.url\}\}/img/Snip20171024_29.png)在下面会讲到）
 	
-![]({{site.url}}/img/Snip20171024_28.png)
+![]({{site.url}}/img/Snip20171025_7.png)
 
 
 ## 六.写文章
