@@ -7,6 +7,7 @@ date: 2017-10-25 15:15:24.000000000 +08:00
 ![]({{site.url}}/img/jenkins/Snip20171019_4.png)
 
 ### 一.Jenkisn安装和启动
+---
 
 安装Jenkins通过homebrew安装比较方便，有的伙伴是通过jenkins主页下载软件的方式,手动安装的，我这里贴出主页链接 [jenkins官网](http://jenkins-ci.org)本文就不在赘述，请自行百度。
 
@@ -20,7 +21,7 @@ date: 2017-10-25 15:15:24.000000000 +08:00
 
 - 2.确认你的电脑已经安装有Homebrew
 
->Homebrew简称brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件.
+>Homebrew 简称 brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件.
 
 ```
 直接在终端输入以下命令，查看当前设备的Homebrew版本信息：
@@ -60,6 +61,7 @@ $ jenkins
 
 
 ### 二.注册Jenkins账号
+---
 
 - 1.保持jenkins开启状态，打开浏览器输入:[http://localhost:8080](http://localhost:8080),就能进入jenkins页面.
 
@@ -92,9 +94,94 @@ $ jenkins
 	![]({{site.url}}/img/jenkins/Snip20171026_22.png)
 
 
-###三、Jenkins配置
+###三、Jenkins插件
+---
 
-- 1.插件plugin
+- 1.安装插件plugin
+	
+	> 左边栏选择系统设置
+
+	![]({{site.url}}/img/jenkins/Snip20171026_26.png)
+	
+	> 选择功能列表中的管理插件
+	
+	![]({{site.url}}/img/jenkins/Snip20171026_26.png)
+
+	
+	> 搜索并安装下列插件
+	
+	![]({{site.url}}/img/jenkins/Snip20171026_31.png)	
+
+	```
+	1.Global Post Script Plugin (配置打包脚本)
+	
+	2.Git Parameter Plug-In (用于配置打包分支)
+	
+	3.Keychains and Provisioning Profiles Management (用于配置项目发布/测试证书)
+	
+	4.fir-plugin (打包上传fir配置)
+	
+	5.Git plugin/GitHub plugin/Git client plugin/Email Extension Plugin
+	(这些插件jenkins默认已经安装，如果没有需要手动安装)
+	
+	6.Xcode integration 
+	此插件是用于Xcode配置的，这里注意不用下载
+	因为Xcode9打包流程有变化，不管用了，下了也白瞎，文章后面再讲。
+	
+	```
+
+	> 已经安装的插件在“可选插件”中搜索是搜索不到的，如果你发现你需要的插件搜不到，可能说明它已经默认安装了，到已“已安装”看看是不是已经安装过了。如果你使用GitLab或者SVN请百度搜索相应的插件，本文demo项目代码都在Github仓库里，网上有大量的资料可查。
+	
+- 2.管理证书和描述文件插件配置<br/>
+	（使用Keychains and Provisioning Profiles Management插件）
+	
+	> 进入 ~/Library/Keychains/ 复制该目录下的login.keychain-db到桌面，去掉后面的-db,修改命名为login.keychain备用
+	
+  	![]({{site.url}}/img/jenkins/Snip20171026_35.png)
+  
+   > 回到jenkins页面进入如下操作进入证书插件管理页面
+
+  	![]({{site.url}}/img/jenkins/Snip20171026_33.png)
+  	
+  	![]({{site.url}}/img/jenkins/Snip20171026_32.png)
+
+	> 点击"选择文件"，选择刚才复制到桌面的login.keychain，点击upload上传。
+
+	Keychains配置:
+	
+	```
+	Filename: 填写上传的文件名：login.keychain
+	Password: 开机密码
+	Description: 可以不填
+	Code Signing Identity : iPhone Distribution: xxxxx Company of China, Ltd.
+	
+	```
+	Provisioning Profiles配置:	
+
+	```
+	Filename: 填写当前证书对应的描述文件名称
+	Provisioning Profiles Directory Path: /Users/Shared/Jenkins/Library/MobileDevice/Provisioning Profiles 
+	UUID:3ff1xxx-xxxx-xxxx-xxxx-xxxxxbe09d1e7
+	
+	```
+	获取工程的CODE\_SIGN\_IDENTITY和PROVISIONING_PROFILE
+	> Keychains配置和Provisioning Profiles配置中的Code Signing Identity,UUID,的获取可通过如下方法：
+	
+	* 右键 xxx.xcodeproj 显示包内容 然后打开project.pbxproj文件
+	* command F 搜索 CODE\_SIGN\_IDENTITY 和 PROVISIONING_PROFILE
+
+  	![]({{site.url}}/img/jenkins/Snip20171026_41.png)
+
+	> 上图中可以获取Keychains配置的Code Signing Identity，Provisioning Profiles配置的Filename（PROVISIONING\_PROFILES\_SPECIFIER对应的值）和UUID（PROVISIONING\_PROFILES对应的值）
+	
+	* 点击save保存设置
+
+### 四、新建项目
+
+  ![]({{site.url}}/img/jenkins/Snip20171026_48.png)
+
+
+	
 
 
 
@@ -103,14 +190,7 @@ $ jenkins
 
 
 
-
-
-
-
-
-
-
-
+	
 
 #### What's this
 
