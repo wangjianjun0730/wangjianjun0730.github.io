@@ -127,24 +127,22 @@ $ jenkins
 	6.Xcode integration 
 	此插件是用于Xcode配置的，这里注意不用下载
 	因为Xcode9打包流程有变化，不管用了，下了也白瞎，文章后面再讲。
-	
 	```
 
 	> 已经安装的插件在“可选插件”中搜索是搜索不到的，如果你发现你需要的插件搜不到，可能说明它已经默认安装了，到已“已安装”看看是不是已经安装过了。如果你使用GitLab或者SVN请百度搜索相应的插件，本文demo项目代码都在Github仓库里，网上有大量的资料可查。
 	
-- 2.管理证书和描述文件插件配置<br/>
-	（使用Keychains and Provisioning Profiles Management插件）
+- 2.管理证书和描述文件插件配置<br/>（使用Keychains and Provisioning Profiles Management插件）
 	
-	> 进入 ~/Library/Keychains/ 复制该目录下的login.keychain-db到桌面，去掉后面的-db,修改命名为login.keychain备用
+	> 进入 ~/Library/Keychains/ 复制该目录下的login.keychain-db到桌面，去掉后面的-db,修改命名为login.keychain备用.
 	
-  	![]({{site.url}}/img/jenkins/Snip20171026_35.png)
-  
+	![]({{site.url}}/img/jenkins/Snip20171026_35.png)
+	
    > 回到jenkins页面进入如下操作进入证书插件管理页面
 
-  	![]({{site.url}}/img/jenkins/Snip20171026_33.png)
-  	
-  	![]({{site.url}}/img/jenkins/Snip20171026_32.png)
-
+   ![]({{site.url}}/img/jenkins/Snip20171026_33.png)
+	
+   ![]({{site.url}}/img/jenkins/Snip20171026_32.png)
+  
 	> 点击"选择文件"，选择刚才复制到桌面的login.keychain，点击upload上传。
 
 	Keychains配置:
@@ -153,16 +151,15 @@ $ jenkins
 	Filename: 填写上传的文件名：login.keychain
 	Password: 开机密码
 	Description: 可以不填
-	Code Signing Identity : iPhone Distribution: xxxxx Company of China, Ltd.
-	
+	Code Signing Identity : iPhone Distribution: xxxxx Company of China, Ltd. (下面介绍了获取方法)
 	```
+	
 	Provisioning Profiles配置:	
-
-	```
-	Filename: 填写当前证书对应的描述文件名称
-	Provisioning Profiles Directory Path: /Users/Shared/Jenkins/Library/MobileDevice/Provisioning Profiles 
-	UUID:3ff1xxx-xxxx-xxxx-xxxx-xxxxxbe09d1e7
 	
+	```
+	Filename: 填写当前证书对应的描述文件名称 (下面介绍了获取方法)
+	Provisioning Profiles Directory Path: /Users/Shared/Jenkins/Library/MobileDevice/Provisioning Profiles  (这是jenkins存放证书对应的描述文件的地方，通过finder到文件夹目录下看看就知道是啥)
+	UUID:3ff1xxx-xxxx-xxxx-xxxx-xxxxxbe09d1e7  (下面介绍了获取方法)
 	```
 	获取工程的CODE\_SIGN\_IDENTITY和PROVISIONING_PROFILE
 	> Keychains配置和Provisioning Profiles配置中的Code Signing Identity,UUID,的获取可通过如下方法：
@@ -180,13 +177,32 @@ $ jenkins
 
   ![]({{site.url}}/img/jenkins/Snip20171026_48.png)
 
+### 五、构建配置
 
-	
+- 1.源码管理
 
+> 打开创建的jenkins项目
 
+  ![]({{site.url}}/img/jenkins/Snip20171026_48.png)
+  
+> 源码管理配置 
+ 
+  ![]({{site.url}}/img/jenkins/Snip20171026_49.png)
+  
+  ```
+  a.点选Git选项
+  b.Repository URL	处填写Github仓库地址
+  ```
 
+- 2.分支配置
 
+  ![]({{site.url}}/img/jenkins/Snip20171026_53.png)
+   
+  > 上面点选"参数化构建过程"，会出现Git Paraeter配置，这个就是我们下载的Git Parameter Plug-In插件
+   
+  ![]({{site.url}}/img/jenkins/Snip20171026_54.png)
 
+- 3.
 
 
 

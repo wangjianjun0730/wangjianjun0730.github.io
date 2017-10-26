@@ -5,8 +5,8 @@
     <description>成长是一条并不平坦的路</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Oct 2017 12:55:37 +0800</pubDate>
-    <lastBuildDate>Thu, 26 Oct 2017 12:55:37 +0800</lastBuildDate>
+    <pubDate>Thu, 26 Oct 2017 21:07:52 +0800</pubDate>
+    <lastBuildDate>Thu, 26 Oct 2017 21:07:52 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -14,6 +14,7 @@
         <description>&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171019_4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;一jenkisn安装和启动&quot;&gt;一.Jenkisn安装和启动&lt;/h3&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;安装Jenkins通过homebrew安装比较方便，有的伙伴是通过jenkins主页下载软件的方式,手动安装的，我这里贴出主页链接 &lt;a href=&quot;http://jenkins-ci.org&quot;&gt;jenkins官网&lt;/a&gt;本文就不在赘述，请自行百度。&lt;/p&gt;
 
@@ -32,7 +33,7 @@
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Homebrew简称brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件.&lt;/p&gt;
+  &lt;p&gt;Homebrew 简称 brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;直接在终端输入以下命令，查看当前设备的Homebrew版本信息：
@@ -75,6 +76,7 @@ $ jenkins
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171025_15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;二注册jenkins账号&quot;&gt;二.注册Jenkins账号&lt;/h3&gt;
+&lt;hr /&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -117,11 +119,115 @@ $ jenkins
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;###三、Jenkins配置&lt;/p&gt;
+&lt;h3 id=&quot;三jenkins插件&quot;&gt;三、Jenkins插件&lt;/h3&gt;
+&lt;hr /&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;1.插件plugin&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.安装插件plugin&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;左边栏选择系统设置&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_26.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;选择功能列表中的管理插件&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_26.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;搜索并安装下列插件&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  1.Global Post Script Plugin (配置打包脚本)
+	
+  2.Git Parameter Plug-In (用于配置打包分支)
+	
+  3.Keychains and Provisioning Profiles Management (用于配置项目发布/测试证书)
+	
+  4.fir-plugin (打包上传fir配置)
+	
+  5.Git plugin/GitHub plugin/Git client plugin/Email Extension Plugin
+  (这些插件jenkins默认已经安装，如果没有需要手动安装)
+	
+  6.Xcode integration 
+  此插件是用于Xcode配置的，这里注意不用下载
+  因为Xcode9打包流程有变化，不管用了，下了也白瞎，文章后面再讲。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;已经安装的插件在“可选插件”中搜索是搜索不到的，如果你发现你需要的插件搜不到，可能说明它已经默认安装了，到已“已安装”看看是不是已经安装过了。如果你使用GitLab或者SVN请百度搜索相应的插件，本文demo项目代码都在Github仓库里，网上有大量的资料可查。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.管理证书和描述文件插件配置&lt;br /&gt;（使用Keychains and Provisioning Profiles Management插件）&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;进入 ~/Library/Keychains/ 复制该目录下的login.keychain-db到桌面，去掉后面的-db,修改命名为login.keychain备用.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_35.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;回到jenkins页面进入如下操作进入证书插件管理页面&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_33.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_32.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;点击”选择文件”，选择刚才复制到桌面的login.keychain，点击upload上传。&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;Keychains配置:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Filename: 填写上传的文件名：login.keychain
+  Password: 开机密码
+  Description: 可以不填
+  Code Signing Identity : iPhone Distribution: xxxxx Company of China, Ltd. (下面介绍了获取方法)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;Provisioning Profiles配置:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Filename: 填写当前证书对应的描述文件名称 (下面介绍了获取方法)
+  Provisioning Profiles Directory Path: /Users/Shared/Jenkins/Library/MobileDevice/Provisioning Profiles  (这是jenkins存放证书对应的描述文件的地方，通过finder到文件夹目录下看看就知道是啥)
+  UUID:3ff1xxx-xxxx-xxxx-xxxx-xxxxxbe09d1e7  (下面介绍了获取方法)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;获取工程的CODE_SIGN_IDENTITY和PROVISIONING_PROFILE&lt;/p&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;Keychains配置和Provisioning Profiles配置中的Code Signing Identity,UUID,的获取可通过如下方法：&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;右键 xxx.xcodeproj 显示包内容 然后打开project.pbxproj文件&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;command F 搜索 CODE_SIGN_IDENTITY 和 PROVISIONING_PROFILE&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_41.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;上图中可以获取Keychains配置的Code Signing Identity，Provisioning Profiles配置的Filename（PROVISIONING_PROFILES_SPECIFIER对应的值）和UUID（PROVISIONING_PROFILES对应的值）&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;点击save保存设置&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;四新建项目&quot;&gt;四、新建项目&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_48.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;五构建配置&quot;&gt;五、构建配置&lt;/h3&gt;
 
 &lt;h4 id=&quot;whats-this&quot;&gt;What’s this&lt;/h4&gt;
 

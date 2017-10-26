@@ -125,6 +125,7 @@
     <p><img src="http://localhost:4000/img/jenkins/Snip20171019_4.png" alt="" /></p>
 
 <h3 id="一jenkisn安装和启动">一.Jenkisn安装和启动</h3>
+<hr />
 
 <p>安装Jenkins通过homebrew安装比较方便，有的伙伴是通过jenkins主页下载软件的方式,手动安装的，我这里贴出主页链接 <a href="http://jenkins-ci.org">jenkins官网</a>本文就不在赘述，请自行百度。</p>
 
@@ -143,7 +144,7 @@
 </ul>
 
 <blockquote>
-  <p>Homebrew简称brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件.</p>
+  <p>Homebrew 简称 brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件.</p>
 </blockquote>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>直接在终端输入以下命令，查看当前设备的Homebrew版本信息：
@@ -186,6 +187,7 @@ $ jenkins
 <p><img src="http://localhost:4000/img/jenkins/Snip20171025_15.png" alt="" /></p>
 
 <h3 id="二注册jenkins账号">二.注册Jenkins账号</h3>
+<hr />
 
 <ul>
   <li>
@@ -228,11 +230,115 @@ $ jenkins
   </li>
 </ul>
 
-<p>###三、Jenkins配置</p>
+<h3 id="三jenkins插件">三、Jenkins插件</h3>
+<hr />
 
 <ul>
-  <li>1.插件plugin</li>
+  <li>
+    <p>1.安装插件plugin</p>
+
+    <blockquote>
+      <p>左边栏选择系统设置</p>
+    </blockquote>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171026_26.png" alt="" /></p>
+
+    <blockquote>
+      <p>选择功能列表中的管理插件</p>
+    </blockquote>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171026_26.png" alt="" /></p>
+
+    <blockquote>
+      <p>搜索并安装下列插件</p>
+    </blockquote>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171026_31.png" alt="" /></p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  1.Global Post Script Plugin (配置打包脚本)
+	
+  2.Git Parameter Plug-In (用于配置打包分支)
+	
+  3.Keychains and Provisioning Profiles Management (用于配置项目发布/测试证书)
+	
+  4.fir-plugin (打包上传fir配置)
+	
+  5.Git plugin/GitHub plugin/Git client plugin/Email Extension Plugin
+  (这些插件jenkins默认已经安装，如果没有需要手动安装)
+	
+  6.Xcode integration 
+  此插件是用于Xcode配置的，这里注意不用下载
+  因为Xcode9打包流程有变化，不管用了，下了也白瞎，文章后面再讲。
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>已经安装的插件在“可选插件”中搜索是搜索不到的，如果你发现你需要的插件搜不到，可能说明它已经默认安装了，到已“已安装”看看是不是已经安装过了。如果你使用GitLab或者SVN请百度搜索相应的插件，本文demo项目代码都在Github仓库里，网上有大量的资料可查。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>2.管理证书和描述文件插件配置<br />（使用Keychains and Provisioning Profiles Management插件）</p>
+
+    <blockquote>
+      <p>进入 ~/Library/Keychains/ 复制该目录下的login.keychain-db到桌面，去掉后面的-db,修改命名为login.keychain备用.</p>
+    </blockquote>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171026_35.png" alt="" /></p>
+
+    <blockquote>
+      <p>回到jenkins页面进入如下操作进入证书插件管理页面</p>
+    </blockquote>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171026_33.png" alt="" /></p>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171026_32.png" alt="" /></p>
+
+    <blockquote>
+      <p>点击”选择文件”，选择刚才复制到桌面的login.keychain，点击upload上传。</p>
+    </blockquote>
+
+    <p>Keychains配置:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Filename: 填写上传的文件名：login.keychain
+  Password: 开机密码
+  Description: 可以不填
+  Code Signing Identity : iPhone Distribution: xxxxx Company of China, Ltd. (下面介绍了获取方法)
+</code></pre></div>    </div>
+
+    <p>Provisioning Profiles配置:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Filename: 填写当前证书对应的描述文件名称 (下面介绍了获取方法)
+  Provisioning Profiles Directory Path: /Users/Shared/Jenkins/Library/MobileDevice/Provisioning Profiles  (这是jenkins存放证书对应的描述文件的地方，通过finder到文件夹目录下看看就知道是啥)
+  UUID:3ff1xxx-xxxx-xxxx-xxxx-xxxxxbe09d1e7  (下面介绍了获取方法)
+</code></pre></div>    </div>
+    <p>获取工程的CODE_SIGN_IDENTITY和PROVISIONING_PROFILE</p>
+    <blockquote>
+      <p>Keychains配置和Provisioning Profiles配置中的Code Signing Identity,UUID,的获取可通过如下方法：</p>
+    </blockquote>
+
+    <ul>
+      <li>右键 xxx.xcodeproj 显示包内容 然后打开project.pbxproj文件</li>
+      <li>
+        <p>command F 搜索 CODE_SIGN_IDENTITY 和 PROVISIONING_PROFILE</p>
+
+        <p><img src="http://localhost:4000/img/jenkins/Snip20171026_41.png" alt="" /></p>
+      </li>
+    </ul>
+
+    <blockquote>
+      <p>上图中可以获取Keychains配置的Code Signing Identity，Provisioning Profiles配置的Filename（PROVISIONING_PROFILES_SPECIFIER对应的值）和UUID（PROVISIONING_PROFILES对应的值）</p>
+    </blockquote>
+
+    <ul>
+      <li>点击save保存设置</li>
+    </ul>
+  </li>
 </ul>
+
+<h3 id="四新建项目">四、新建项目</h3>
+
+<p><img src="http://localhost:4000/img/jenkins/Snip20171026_48.png" alt="" /></p>
+
+<h3 id="五构建配置">五、构建配置</h3>
 
 <h4 id="whats-this">What’s this</h4>
 
