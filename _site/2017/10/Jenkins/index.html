@@ -7,16 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <title>Jenkins+github+fir持续集成iOS项目</title>
-  <meta name="description" content="What’s this">
+  <meta name="description" content="">
   <meta name="author" content="Wei Wang">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Jenkins+github+fir持续集成iOS项目">
-  <meta name="twitter:description" content="What’s this">
+  <meta name="twitter:description" content="">
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="Jenkins+github+fir持续集成iOS项目">
-  <meta property="og:description" content="What’s this">
+  <meta property="og:description" content="">
   
   <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
   <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -122,7 +122,57 @@
   </header>
 
   <section class="post">
-    <h4 id="whats-this">What’s this</h4>
+    <p><img src="http://localhost:4000/img/Snip20171019_4.png" alt="" /></p>
+
+<h3 id="一jenkisn安装和启动">一.Jenkisn安装和启动</h3>
+
+<p>安装Jenkins通过homebrew安装比较方便，有的伙伴是通过jenkins主页下载软件的方式,手动安装的，我这里贴出主页链接 <a href="http://jenkins-ci.org">jenkins官网</a>本文就不在赘述，请自行百度。</p>
+
+<ul>
+  <li>1.确认你的电脑已经安装有Homebrew</li>
+</ul>
+
+<blockquote>
+  <p>Homebrew简称brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件.</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>直接在终端输入以下命令，查看当前设备的Homebrew版本信息：
+
+brew -v
+
+(如果当前设备未安装Homebrew终端上回报错，这时请直接copy下列命令到终端安装Homebrew:)
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 
+
+回车执行上方命令，安装全都是自动化的，很简单。
+</code></pre></div></div>
+
+<ul>
+  <li>2.安装jenkins</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>命令行直接输入：
+
+$ brew install jenkins
+</code></pre></div></div>
+
+<ul>
+  <li>3.启动jenkins</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>命令行直接输入：
+
+$ jenkins
+
+</code></pre></div></div>
+
+<h3 id="二访问jenkisn">二.访问Jenkisn</h3>
+
+<ul>
+  <li>1.保持jenkins开启状态，打开浏览器输入：http://localhost:8080</li>
+</ul>
+
+<h4 id="whats-this">What’s this</h4>
 
 <p><a href="https://github.com/onevcat/vno-jekyll">Vno Jekyll</a> is a theme for <a href="http://jekyllrb.com">Jekyll</a>. It is a port of my Ghost theme <a href="https://github.com/onevcat/vno">vno</a>, which is originally developed from <a href="https://github.com/daleanthony/uno">Dale Anthony’s Uno</a>.</p>
 

@@ -4,6 +4,64 @@ title: Jenkins+github+fir持续集成iOS项目
 date: 2017-10-25 15:15:24.000000000 +08:00
 ---
 
+![]({{site.url}}/img/jenkins/Snip20171019_4.png)
+
+### 一.Jenkisn安装和启动
+
+安装Jenkins通过homebrew安装比较方便，有的伙伴是通过jenkins主页下载软件的方式,手动安装的，我这里贴出主页链接 [jenkins官网](http://jenkins-ci.org)本文就不在赘述，请自行百度。
+
+- 1.安装jenkins必须先安装java sdk
+
+	[oracle java SDK 下载链接](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+
+![]({{site.url}}/img/jenkins/Snip20171025_18.png)
+
+
+
+- 2.确认你的电脑已经安装有Homebrew
+
+>Homebrew简称brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件.
+
+```
+直接在终端输入以下命令，查看当前设备的Homebrew版本信息：
+
+brew -v
+
+(如果当前设备未安装Homebrew终端上回报错，这时请直接copy下列命令到终端安装Homebrew:)
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 
+
+回车执行上方命令，安装全都是自动化的，很简单。
+```
+
+- 3.安装jenkins
+
+```
+命令行直接输入：
+
+$ brew install jenkins
+```
+
+- 4.启动jenkins
+
+```
+命令行直接输入：
+
+$ jenkins
+
+```
+
+![]({{site.url}}/img/jenkins/Snip20171025_15.png)
+
+
+### 二.访问Jenkisn
+
+- 1.保持jenkins开启状态，打开浏览器输入:[http://localhost:8080](http://localhost:8080),就能进入jenkins页面.
+
+
+
+
+
 #### What's this
 
 [Vno Jekyll](https://github.com/onevcat/vno-jekyll) is a theme for [Jekyll](http://jekyllrb.com). It is a port of my Ghost theme [vno](https://github.com/onevcat/vno), which is originally developed from [Dale Anthony's Uno](https://github.com/daleanthony/uno).
