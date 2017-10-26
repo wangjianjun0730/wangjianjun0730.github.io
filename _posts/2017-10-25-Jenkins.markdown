@@ -94,7 +94,7 @@ $ jenkins
 	![]({{site.url}}/img/jenkins/Snip20171026_22.png)
 
 
-###三、Jenkins插件
+### 三、Jenkins插件
 ---
 
 - 1.安装插件plugin
