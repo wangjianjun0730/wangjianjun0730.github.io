@@ -5,20 +5,30 @@
     <description>成长是一条并不平坦的路</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Oct 2017 17:46:45 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Oct 2017 17:46:45 +0800</lastBuildDate>
+    <pubDate>Thu, 26 Oct 2017 12:55:37 +0800</pubDate>
+    <lastBuildDate>Thu, 26 Oct 2017 12:55:37 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>Jenkins+github+fir持续集成iOS项目</title>
-        <description>&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/Snip20171019_4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171019_4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;一jenkisn安装和启动&quot;&gt;一.Jenkisn安装和启动&lt;/h3&gt;
 
 &lt;p&gt;安装Jenkins通过homebrew安装比较方便，有的伙伴是通过jenkins主页下载软件的方式,手动安装的，我这里贴出主页链接 &lt;a href=&quot;http://jenkins-ci.org&quot;&gt;jenkins官网&lt;/a&gt;本文就不在赘述，请自行百度。&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;1.确认你的电脑已经安装有Homebrew&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.安装jenkins必须先安装java sdk&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&quot;&gt;oracle java SDK 下载链接&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171025_18.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2.确认你的电脑已经安装有Homebrew&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
@@ -37,16 +47,23 @@ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/ma
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;2.安装jenkins&lt;/li&gt;
+  &lt;li&gt;3.安装jenkins&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;命令行直接输入：
 
 $ brew install jenkins
+
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;blockquote&gt;
+  &lt;p&gt;这一步需要留意Administrator password,这个Administrator password会在后面设置用到，尽量copy出来备用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;3.启动jenkins&lt;/li&gt;
+  &lt;li&gt;4.启动jenkins&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;命令行直接输入：
@@ -55,10 +72,55 @@ $ jenkins
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;二访问jenkisn&quot;&gt;二.访问Jenkisn&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171025_15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;二注册jenkins账号&quot;&gt;二.注册Jenkins账号&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;1.保持jenkins开启状态，打开浏览器输入：http://localhost:8080&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.保持jenkins开启状态，打开浏览器输入:&lt;a href=&quot;http://localhost:8080&quot;&gt;http://localhost:8080&lt;/a&gt;,就能进入jenkins页面.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.jenkins页面设置&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;初次使用kenkins会先看到以下页面&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Administrator password的设置区分是脚本安装，还是dmg文件安装:&lt;br /&gt;
+  a ~&amp;gt; 如果是脚本安装的话，可以从终端直接查阅password；&lt;br /&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;b ~&amp;gt; 如果是dmg文件安装的话，必须从文件查看（安装目录—&amp;gt;secrets—&amp;gt;鼠标右击—&amp;gt;显示属性—&amp;gt;共享与权限—&amp;gt;修改成读与写—&amp;gt;initialAdminPassword—&amp;gt;鼠标右击—&amp;gt;显示属性—&amp;gt;共享与权限—&amp;gt;修改成读与写—&amp;gt;双击打开initialAdminPassword）&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.注册并登陆jenkins账号&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_21.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_22.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###三、Jenkins配置&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1.插件plugin&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;whats-this&quot;&gt;What’s this&lt;/h4&gt;
