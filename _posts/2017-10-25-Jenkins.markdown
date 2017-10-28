@@ -189,6 +189,10 @@ $ jenkins
  
   ![]({{site.url}}/img/jenkins/Snip20171026_49.png)
   
+  
+  ![]({{site.url}}/img/jenkins/Snip20171028_1.png)
+  
+  
   ```
   a.点选Git选项
   b.Repository URL	处填写Github仓库地址
@@ -212,7 +216,7 @@ $ jenkins
 
   ![]({{site.url}}/img/jenkins/Snip20171027_5.png)
 
-  > 这里需要注意的是 "#获取钥匙串权限:-p" 这里填开机密码；后面的"~/Library/Keychains/login.keychain-db" 此时应该填login.keychain-db，而不是login.keychain。Mac系统10.12版本以后login.keychain都变成了login.keychain-db.
+  > 这里需要注意的是 "#获取钥匙串权限:-p" 这里填开机密码；后面的"~/Library/Keychains/login.keychain-db" 此时应该填login.keychain-db，而不是login.keychain。Mac系统10.12版本以后login.keychain都变成了login.keychain-db,所以低版本的mac上找不到login.keychian文件。
 
   ![]({{site.url}}/img/jenkins/Snip20171027_6.png)
 
@@ -220,52 +224,39 @@ $ jenkins
   
   ![]({{site.url}}/img/jenkins/Snip20171027_6.png)
   
-  
   xcodebuild + Xcode9 
 使用xcodebuild做打包构建时，执行exportArchive命令出错，错误信息：
 
+- 5.构建后配置(上传至fir)
+
+  ![]({{site.url}}/img/jenkins/Snip20171028_2.png)	
+  > 此处填写fir的token
+
+  ![]({{site.url}}/img/jenkins/Snip20171028_3.png)
+  
+  > 这个token登录fir账号左上角，把鼠标箭头指到那里就会出现了。
 
 
+### 六、构建版本并上传
 
-[参考博客:iOS Shell脚本自动构建打包、发布、部署jenkins](http://www.jianshu.com/p/ad4a9c40ae59)
+> 这里的操作其实都已经是自动化操作了，点击 Build with Parameters，选择分支，就可以构建并打包上传了。
 
-#### What's this
+![]({{site.url}}/img/jenkins/Snip20171028_4.png)
 
-[Vno Jekyll](https://github.com/onevcat/vno-jekyll) is a theme for [Jekyll](http://jekyllrb.com). It is a port of my Ghost theme [vno](https://github.com/onevcat/vno), which is originally developed from [Dale Anthony's Uno](https://github.com/daleanthony/uno).
+![]({{site.url}}/img/jenkins/Snip20171028_6.png)
 
-#### Usage
-
-```bash
-$ git clone https://github.com/onevcat/vno-jekyll.git your_site
-$ cd your_site
-$ bundler install
-$ bundler exec jekyll serve
+### 七、其他电脑控制你的mac打包上传
+```
+1.首先保证的电脑jenkins服务是开启的
+2.获取电脑当前的ip
 ```
 
-Your site with `Vno Jekyll` enabled should be accessible in http://127.0.0.1:4000.
+![]({{site.url}}/img/jenkins/Snip20171028_7.png)
 
-For more information about Jekyll, please visit [Jekyll's site](http://jekyllrb.com).
+```
+3.在他人的电脑浏览器输入：<你电脑的ip>:8080/login
+```
 
-#### Configuration
+![]({{site.url}}/img/jenkins/Snip20171028_8.png)
 
-All configuration could be done in `_config.yml`. Remember you need to restart to serve the page when after changing the config file. Everything in the config file should be self-explanatory.
-
-#### Background image and avatar
-
-You could replace the background and avatar image in `assets/images` folder to change them.
-
-#### Sites using Vno
-
-[My blog](http://onevcat.com) is using `Vno Jekyll` as well, you could see how it works in real. There are some other sites using the same theme. You can find them below:
-
-| Site Name    | URL                                                |
-| ------------ | ---------------------------------------------------|
-| OneV's Den   | [http://onevcat.com](http://onevcat.com)           |
-| July Tang    | [http://blog.julytang.xyz](http://onevcat.com)     |
-| Harry Lee    | [http://qiuqi.li](http://qiuqi.li)                 |
-
-> If you happen to be using this theme, welcome to [send me a pull request](https://github.com/onevcat/vno-jekyll/pulls) to add your site link here. :)
-
-#### License
-
-Great thanks to [Dale Anthony](https://github.com/daleanthony) and his [Uno](https://github.com/daleanthony/uno). Vno Jekyll is based on Uno, and contains a lot of modification on page layout, animation, font and some more things I can not remember. Vno Jekyll is followed with Uno and be licensed as [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/). See the link for more information.
+现在请开始装逼...

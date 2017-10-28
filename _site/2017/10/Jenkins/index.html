@@ -340,6 +340,71 @@ $ jenkins
 
 <h3 id="五构建配置">五、构建配置</h3>
 
+<ul>
+  <li>1.源码管理</li>
+</ul>
+
+<blockquote>
+  <p>打开创建的jenkins项目</p>
+</blockquote>
+
+<p><img src="http://localhost:4000/img/jenkins/Snip20171026_48.png" alt="" /></p>
+
+<blockquote>
+  <p>源码管理配置</p>
+</blockquote>
+
+<p><img src="http://localhost:4000/img/jenkins/Snip20171026_49.png" alt="" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a.点选Git选项
+  b.Repository URL	处填写Github仓库地址
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>2.分支配置</p>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171026_53.png" alt="" /></p>
+
+    <blockquote>
+      <p>上面点选”参数化构建过程”，会出现Git Paraeter配置，这个就是我们下载的Git Parameter Plug-In插件。Name一栏的名字可以随便取但是要保证这里填写的名称要跟源码管理中的Branch Specifier (blank for ‘any’)一栏就需要用$ + 上面填的名称.</p>
+    </blockquote>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171026_54.png" alt="" /></p>
+  </li>
+  <li>
+    <p>3.构建环境配置</p>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171027_4.png" alt="" /></p>
+
+    <blockquote>
+      <p>点选Keychains and Code Signing Identities 使用证书管理插件进行配置。Keychain就是上传的login.keychian，Code Signing Identity上面已经获取到了，点选Mobile Provisioning Profiles，配置Provisioning Profile，这些现在应该是可以直接选择的。其他按照上图填写即可。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>4.构建配置</p>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171027_5.png" alt="" /></p>
+
+    <blockquote>
+      <p>这里需要注意的是 “#获取钥匙串权限:-p” 这里填开机密码；后面的”~/Library/Keychains/login.keychain-db” 此时应该填login.keychain-db，而不是login.keychain。Mac系统10.12版本以后login.keychain都变成了login.keychain-db,所以低版本的mac上找不到login.keychian文件。</p>
+    </blockquote>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171027_6.png" alt="" /></p>
+
+    <blockquote>
+      <p>这里需要注意"PROVISIONING_PROFILE"就是上面获取的描述文件额UUID名称，重点是-exportOptionsPlist "${ROOT_PATH}iOS_Build.plist”,${ROOT_PATH}表示需要打包的项目的根目录，iOS_Build.plist是自建的文件，这个文件的真身是exportOptions.plist文件,这里我换了个名字。</p>
+    </blockquote>
+
+    <p><img src="http://localhost:4000/img/jenkins/Snip20171027_6.png" alt="" /></p>
+
+    <p>xcodebuild + Xcode9 
+使用xcodebuild做打包构建时，执行exportArchive命令出错，错误信息：</p>
+  </li>
+</ul>
+
+<p><a href="http://www.jianshu.com/p/ad4a9c40ae59">参考博客:iOS Shell脚本自动构建打包、发布、部署jenkins</a></p>
+
 <h4 id="whats-this">What’s this</h4>
 
 <p><a href="https://github.com/onevcat/vno-jekyll">Vno Jekyll</a> is a theme for <a href="http://jekyllrb.com">Jekyll</a>. It is a port of my Ghost theme <a href="https://github.com/onevcat/vno">vno</a>, which is originally developed from <a href="https://github.com/daleanthony/uno">Dale Anthony’s Uno</a>.</p>
@@ -447,7 +512,7 @@ $ jenkins
             <section class="footer">
     <footer>
     	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
-        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2017-10-26 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>
+        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2017-10-28 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>
         <span class="footer__copyright">本站由 <a>王建军</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2017</span>
     </footer>
 </section>

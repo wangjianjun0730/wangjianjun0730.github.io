@@ -5,8 +5,8 @@
     <description>成长是一条并不平坦的路</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Oct 2017 21:07:52 +0800</pubDate>
-    <lastBuildDate>Thu, 26 Oct 2017 21:07:52 +0800</lastBuildDate>
+    <pubDate>Sat, 28 Oct 2017 09:34:59 +0800</pubDate>
+    <lastBuildDate>Sat, 28 Oct 2017 09:34:59 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -228,6 +228,71 @@ $ jenkins
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_48.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;五构建配置&quot;&gt;五、构建配置&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1.源码管理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;打开创建的jenkins项目&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_48.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;源码管理配置&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_49.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  a.点选Git选项
+  b.Repository URL	处填写Github仓库地址
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.分支配置&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_53.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;上面点选”参数化构建过程”，会出现Git Paraeter配置，这个就是我们下载的Git Parameter Plug-In插件。Name一栏的名字可以随便取但是要保证这里填写的名称要跟源码管理中的Branch Specifier (blank for ‘any’)一栏就需要用$ + 上面填的名称.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171026_54.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.构建环境配置&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171027_4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;点选Keychains and Code Signing Identities 使用证书管理插件进行配置。Keychain就是上传的login.keychian，Code Signing Identity上面已经获取到了，点选Mobile Provisioning Profiles，配置Provisioning Profile，这些现在应该是可以直接选择的。其他按照上图填写即可。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.构建配置&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171027_5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;这里需要注意的是 “#获取钥匙串权限:-p” 这里填开机密码；后面的”~/Library/Keychains/login.keychain-db” 此时应该填login.keychain-db，而不是login.keychain。Mac系统10.12版本以后login.keychain都变成了login.keychain-db,所以低版本的mac上找不到login.keychian文件。&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171027_6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;这里需要注意&quot;PROVISIONING_PROFILE&quot;就是上面获取的描述文件额UUID名称，重点是-exportOptionsPlist &quot;${ROOT_PATH}iOS_Build.plist”,${ROOT_PATH}表示需要打包的项目的根目录，iOS_Build.plist是自建的文件，这个文件的真身是exportOptions.plist文件,这里我换了个名字。&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jenkins/Snip20171027_6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;xcodebuild + Xcode9 
+使用xcodebuild做打包构建时，执行exportArchive命令出错，错误信息：&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/ad4a9c40ae59&quot;&gt;参考博客:iOS Shell脚本自动构建打包、发布、部署jenkins&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;whats-this&quot;&gt;What’s this&lt;/h4&gt;
 
