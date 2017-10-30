@@ -193,9 +193,12 @@ $ jenkins
   ![]({{site.url}}/img/jenkins/Snip20171028_1.png)
   
   
+  ![]({{site.url}}/img/jenkins/Snip20171030_3.png)
+  
   ```
   a.点选Git选项
   b.Repository URL	处填写Github仓库地址
+  c.添加Github账号和密码
   ```
 
 - 2.分支配置
