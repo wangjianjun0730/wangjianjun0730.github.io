@@ -197,8 +197,8 @@ $ jenkins
   
   ```
   a.点选Git选项
-  b.Repository URL	处填写Github仓库地址
-  c.添加Github账号和密码
+  b."Repository URL"处填写Github仓库地址
+  c.点击"Repository URL"下方"Credentials"右侧的"Add"按钮 添加Github账号和密码
   ```
 
 - 2.分支配置
