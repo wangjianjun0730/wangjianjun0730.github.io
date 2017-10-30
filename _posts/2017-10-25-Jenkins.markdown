@@ -173,6 +173,11 @@ $ jenkins
 	
 	* 点击save保存设置
 
+
+	
+
+	> 这里需要说明，如有多个项目并且证书不同的话，可以Keychains下面的Add Code Signing Identify签名标示；另外直接下载对应的描述文件到桌面，点击最上面的选择文件上传，上传完成后，下面的Provisioning Profiles会出现新上传的描述文件名称和对应的UUID.
+
 ### 四、新建项目
 
   ![]({{site.url}}/img/jenkins/Snip20171026_48.png)
