@@ -216,45 +216,106 @@ $ jenkins
   > 上面点选"参数化构建过程"，会出现Git Paraeter配置，这个就是我们下载的Git Parameter Plug-In插件。Name一栏的名字可以随便取但是要保证这里填写的名称要跟源码管理中的Branch Specifier (blank for 'any')一栏就需要用\$ + 上面填的名称.
    
   ![]({{site.url}}/img/jenkins/Snip20171026_54.png)
-
-- 3.构建环境配置
-
-  ![]({{site.url}}/img/jenkins/Snip20171027_4.png)
-
-  > 点选Keychains and Code Signing Identities 使用证书管理插件进行配置。Keychain就是上传的login.keychian，Code Signing Identity上面已经获取到了，点选Mobile Provisioning Profiles，配置Provisioning Profile，这些现在应该是可以直接选择的。其他按照上图填写即可。
   
 - 4.构建配置
 
-  ![]({{site.url}}/img/jenkins/Snip20171027_5.png)
+
+  ![]({{site.url}}/img/jenkins/Snip20171031_4.png)
+  
+  ![]({{site.url}}/img/jenkins/Snip20171031_2.png)
+
+  >这里需要手动创建四个对应的plist文件，在打包时需要根据这四个exportOption.Plist文件打出对应类型的包（图上已经给出了plist文件的样式,需要根据你打包的类型进行修改）
+
+  ![]({{site.url}}/img/jenkins/Snip20171031_6.png)
 
   > 这里需要注意的是 "#获取钥匙串权限:-p" 这里填开机密码；后面的"~/Library/Keychains/login.keychain-db" 此时应该填login.keychain-db，而不是login.keychain。Mac系统10.12版本以后login.keychain都变成了login.keychain-db,所以低版本的mac上找不到login.keychian文件。
-
-  ![]({{site.url}}/img/jenkins/Snip20171027_6.png)
-
-  > 这里需要注意\"PROVISIONING\_PROFILE\"就是上面获取的描述文件额UUID名称，重点是\-exportOptionsPlist \"\${ROOT\_PATH}iOS\_Build.plist",\${ROOT\_PATH}表示需要打包的项目的根目录，iOS\_Build.plist是自建的文件，这个文件的真身是exportOptions.plist文件,这里我换了个名字。
   
-  ![]({{site.url}}/img/jenkins/Snip20171027_6.png)
+> 下面贴出脚本源码供大家复制粘贴
   
-  xcodebuild + Xcode9 
-使用xcodebuild做打包构建时，执行exportArchive命令出错，错误信息：
+```shell
+#!/bin/sh -
+export LANG=en_US.UTF-8
 
-- 5.构建后配置(上传至fir)
+# 工程名(根据项目自行填写)
+APP_NAME="MyDemos"
 
-  ![]({{site.url}}/img/jenkins/Snip20171028_2.png)	
-  > 此处填写fir的token
+# TARGET名称（根据项目自行填写）
+TARGET_NAME="MyDemos"
 
-  ![]({{site.url}}/img/jenkins/Snip20171028_3.png)
-  
-  > 这个token登录fir账号左上角，把鼠标箭头指到那里就会出现了。
+# 工程根目录#工程源码目录(这里的${WORKSPACE}是jenkins的内置变量表示(jenkins job的路径):/Users/pingankeji/.jenkins/workspace/Mydemos/)   
+# ${WORKSPACE}/MyDemos/ 中的MyDemos根据你的项目自行修改
+CODE_PATH="${WORKSPACE}/MyDemos/"
+
+# 证书
+# 证书配置根据自己的项目自行修改
+CODE_SIGN_DISTRIBUTION="iPhone Developer: hxxxxxx hxx (63xxxx9WZ9)"
+
+# 存放ipa的文件夹名称（根据自己的喜好自行修改）
+IPA_DIR_NAME="${TARGET_NAME}_IPA"
+
+# 导出ipa包的路径
+IPA_EXPORT_PATH=${CODE_PATH}${IPA_DIR_NAME}
+
+# 导包方式(这里需要根据需要手动配置:AdHoc/AppStore/Enterprise/Development)
+EXPORT_METHOD="Development"
+
+# 导包方式配置文件路径(这里需要手动创建对应的XXXExportOptionsPlist.plist文件，并将文件复制到根目录下[我这里在源项目的根目录下又新建了ExportPlist文件夹专门放ExportPlist文件])
+if test "$EXPORT_METHOD" = "AdHoc"; then
+	EXPORT_METHOD_PLIST_PATH=${CODE_PATH}/ExportPlist/AdHocExportOptions.plist
+elif test "$EXPORT_METHOD" = "AppStore"; then
+	EXPORT_METHOD_PLIST_PATH=${CODE_PATH}/ExportPlist/AppStoreExportOptios.plist
+elif test "$EXPORT_METHOD" = "Enterprise"; then
+	EXPORT_METHOD_PLIST_PATH=${CODE_PATH}/ExportPlist/EnterpriseExportOptions.plist
+else 
+	EXPORT_METHOD_PLIST_PATH=${CODE_PATH}/ExportPlist/DevelopmentExportOptions.plist	
+fi	
+
+# 指ipa定输出文件夹,如果有删除后再创建，如果没有就直接创建
+if test -d ${IPA_EXPORT_PATH}; then
+	rm -rf ${IPA_EXPORT_PATH}
+	mkdir -pv ${IPA_EXPORT_PATH}
+ 	echo ${IPA_EXPORT_PATH}
+else
+ 	mkdir -pv ${IPA_EXPORT_PATH}
+fi
+
+# 删除工程文件
+echo "+++++++++删除工程文件+++++++++"
+rm -rf "${TARGET_NAME}.xcarchive"
+
+# 进入工程源码根目录
+cd "${CODE_PATH}"
+
+# 更新pod
+#/user/local/bin/pod update —verbose —no-repo-update
+
+# 清除工程
+echo "=================clean================="
+xcodebuild -workspace "${APP_NAME}.xcworkspace" -scheme "${TARGET_NAME}" -configuration 'Release' clean
+
+# 获取钥匙串权限(-p 后面的密码为你的开机密码)
+/user/bin/security unlock-keychain -p "1XXXX6" ~/Library/Keychains/login.keychain-db
+
+#将app打包成xcarchive格式文件（PROVISIONING_PROFILE后面是你配置的证书对应的描述文件UUID）
+echo "+++++++++++++++++archive+++++++++++++++++"
+xcodebuild  archive -workspace "${APP_NAME}.xcworkspace" -scheme "${TARGET_NAME}" -archivePath "${TARGET_NAME}.xcarchive" -configuration 'Release' PROVISIONING_PROFILE='e35fb68b-xxxx-xxxx-xxxx-966d73bcdfa2' CODE_SIGN_IDENTITY="${CODE_SIGN_DISTRIBUTION}"
+
+# 将xcarchive格式文件打包成ipa
+echo "+++++++++++++++++ipa+++++++++++++++++"
+xcodebuild -exportArchive -archivePath "${APP_NAME}.xcarchive" -exportPath "${IPA_EXPORT_PATH}" -exportOptionsPlist ${EXPORT_METHOD_PLIST_PATH}
+
+# 登录fir，此处将APIToken换成自己申请的APIToken（-T 后面是你的fir账号APIToken）
+fir login -T 479d380eae1xxxxxxxxxx8a953a8ca27
+
+# 发布到fir
+fir publish ${IPA_EXPORT_PATH}/${APP_NAME}.ipa
+
+```
+
+### 六、开始构建
 
 
-### 六、构建版本并上传
 
-> 这里的操作其实都已经是自动化操作了，点击 Build with Parameters，选择分支，就可以构建并打包上传了。
-
-![]({{site.url}}/img/jenkins/Snip20171028_4.png)
-
-![]({{site.url}}/img/jenkins/Snip20171028_6.png)
 
 ### 七、其他电脑控制你的mac打包上传
 ```
