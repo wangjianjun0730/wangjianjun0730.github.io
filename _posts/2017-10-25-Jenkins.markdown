@@ -162,7 +162,7 @@ $ jenkins
 	UUID:3ff1xxx-xxxx-xxxx-xxxx-xxxxxbe09d1e7  (下面介绍了获取方法)
 	```
 	
-	> 这里需要说明，如有多个项目并且证书不同的话，可以在Keychains下面的Add Code Signing Identify添加签名标示；另外把新的的描述文件到桌面，点击最上面的“选择文件”上传，完成后，下面的Provisioning Profiles会出现新增的描述文件名称和对应的UUID.
+	> 这里需要说明，如有多个项目并且证书不同的话，可以在Keychains下面的Add Code Signing Identify添加签名标示；另外把对应的新添加的描述文件拷贝到桌面，点击最上面的“选择文件”按钮上传。完成后，下面的Provisioning Profiles会出现新增的描述文件名称和对应的UUID.
 	
 	获取工程的CODE\_SIGN\_IDENTITY和PROVISIONING_PROFILE
 	> Keychains配置和Provisioning Profiles配置中的Code Signing Identity,UUID,的获取可通过如下方法：
