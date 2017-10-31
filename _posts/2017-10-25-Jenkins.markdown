@@ -161,6 +161,9 @@ $ jenkins
 	Provisioning Profiles Directory Path: /Users/Shared/Jenkins/Library/MobileDevice/Provisioning Profiles  (这是jenkins存放证书对应的描述文件的地方，通过finder到文件夹目录下看看就知道是啥)
 	UUID:3ff1xxx-xxxx-xxxx-xxxx-xxxxxbe09d1e7  (下面介绍了获取方法)
 	```
+	
+	> 这里需要说明，如有多个项目并且证书不同的话，可以在Keychains下面的Add Code Signing Identify添加签名标示；另外把新的的描述文件到桌面，点击最上面的“选择文件”上传，完成后，下面的Provisioning Profiles会出现新增的描述文件名称和对应的UUID.
+	
 	获取工程的CODE\_SIGN\_IDENTITY和PROVISIONING_PROFILE
 	> Keychains配置和Provisioning Profiles配置中的Code Signing Identity,UUID,的获取可通过如下方法：
 	
@@ -172,11 +175,6 @@ $ jenkins
 	> 上图中可以获取Keychains配置的Code Signing Identity，Provisioning Profiles配置的Filename（PROVISIONING\_PROFILES\_SPECIFIER对应的值）和UUID（PROVISIONING\_PROFILES对应的值）
 	
 	* 点击save保存设置
-
-
-	
-
-	> 这里需要说明，如有多个项目并且证书不同的话，可以Keychains下面的Add Code Signing Identify签名标示；另外直接下载对应的描述文件到桌面，点击最上面的选择文件上传，上传完成后，下面的Provisioning Profiles会出现新上传的描述文件名称和对应的UUID.
 
 ### 四、新建项目
 
@@ -219,18 +217,15 @@ $ jenkins
   
 - 4.构建配置
 
-
   ![]({{site.url}}/img/jenkins/Snip20171031_4.png)
   
   ![]({{site.url}}/img/jenkins/Snip20171031_2.png)
 
-  >这里需要手动创建四个对应的plist文件，在打包时需要根据这四个（根据需要创建,如果只需要打测试和发布两种包，只需创建两种即可）exportOption.Plist文件打出对应类型的包（图上已经给出了plist文件的样式,需要根据你打包的类型进行修改，也可以用xcode打包导出后，它会生成ExportOptions.plist文件，copy出来用也行，但注意文件名要跟自动打包脚本中的保持一致）
+  >这里需要手动创建四个对应的plist文件，在打包时需要根据这四个（根据需要创建,如果只需要打测试和发布两种包，只需创建两种即可）exportOptions.Plist文件打出对应类型的包（图上已经给出了plist文件的样式,需要根据你打包的类型进行修改，也可以用xcode打包导出后，让xcode生成ExportOptions.plist文件，我们copy出来用也行，但注意文件名要跟自动打包脚本中的保持一致）
 
   ![]({{site.url}}/img/jenkins/Snip20171031_6.png)
 
   > 这里需要注意的是 "#获取钥匙串权限:-p" 这里填开机密码；后面的"~/Library/Keychains/login.keychain-db" 此时应该填login.keychain-db，而不是login.keychain。Mac系统10.12版本以后login.keychain都变成了login.keychain-db,所以低版本的mac上找不到login.keychian文件。
-  
-  
   
 > 下面贴出脚本源码供大家复制粘贴
   
