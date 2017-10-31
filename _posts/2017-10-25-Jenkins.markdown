@@ -225,6 +225,7 @@ $ jenkins
   需要注意和了解：
 	1.手动创建四个（根据需要创建,如果只需要打测试和发布两种包,只需创建两种即可）对应的plist文件到源项目的根目录，并传到git仓库。
 	2.在打包时Xcode需要根据exportOptions.plist文件打出对应类型的包（Xcode9）.
+	3.我这里是专门创建了一个ExportPlist文件夹存放自建的ExportOptions.plist文件。（注意脚本中的路径能找到这些文件，不然打包会出错）
   ```
   
   ![]({{site.url}}/img/jenkins/Snip20171031_2.png)
