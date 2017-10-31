@@ -224,11 +224,13 @@ $ jenkins
   
   ![]({{site.url}}/img/jenkins/Snip20171031_2.png)
 
-  >这里需要手动创建四个对应的plist文件，在打包时需要根据这四个exportOption.Plist文件打出对应类型的包（图上已经给出了plist文件的样式,需要根据你打包的类型进行修改）
+  >这里需要手动创建四个对应的plist文件，在打包时需要根据这四个（根据需要创建,如果只需要打测试和发布两种包，只需创建两种即可）exportOption.Plist文件打出对应类型的包（图上已经给出了plist文件的样式,需要根据你打包的类型进行修改，也可以用xcode打包导出后，它会生成ExportOptions.plist文件，copy出来用也行，但注意文件名要跟自动打包脚本中的保持一致）
 
   ![]({{site.url}}/img/jenkins/Snip20171031_6.png)
 
   > 这里需要注意的是 "#获取钥匙串权限:-p" 这里填开机密码；后面的"~/Library/Keychains/login.keychain-db" 此时应该填login.keychain-db，而不是login.keychain。Mac系统10.12版本以后login.keychain都变成了login.keychain-db,所以低版本的mac上找不到login.keychian文件。
+  
+  
   
 > 下面贴出脚本源码供大家复制粘贴
   
