@@ -219,11 +219,12 @@ $ jenkins
 
   ![]({{site.url}}/img/jenkins/Snip20171031_4.png)
   
+  ![]({{site.url}}/img/jenkins/Snip20171031_3.png) 
+  
   ```
   需要注意和了解：
 	1.手动创建四个（根据需要创建,如果只需要打测试和发布两种包,只需创建两种即可）对应的plist文件到源项目的根目录，并传到git仓库。
 	2.在打包时Xcode需要根据exportOptions.plist文件打出对应类型的包（Xcode9）.
-  
   ```
   
   ![]({{site.url}}/img/jenkins/Snip20171031_2.png)
@@ -233,7 +234,6 @@ $ jenkins
 	需要注意和了解：
 	1.图上已经给出了plist文件的样式,需要根据你的要求修改对应的配置.
 	2.也可以用xcode打包导出后，让xcode生成ExportOptions.plist文件，我们copy出来用也行，但注意文件名要跟自动打包脚本中的保持一致，这样可以保证exportOptions.Plist不会配置错误）
-
    ```
 
   ![]({{site.url}}/img/jenkins/Snip20171031_6.png)
@@ -245,7 +245,7 @@ $ jenkins
 	2.Mac系统10.12版本以后login.keychain都变成了login.keychain-db,所以低版本的mac上找不到login.keychian文件。
 	```
   
-> 下面贴出脚本源码供大家复制粘贴
+> 下面贴出脚本源码供大家复制粘贴（）
   
 ```shell
 #!/bin/sh -
