@@ -241,8 +241,8 @@ $ jenkins
 
 	```
 	需要注意和了解：
-	1.这里需要注意的是 "#获取钥匙串权限:-p" 这里填开机密码；后面的"~/Library/	Keychains/login.keychain-db" 此时应该填login.keychain-db，而不是	login.keychain，路径写死。
-	2.Mac系统10.12版本以后login.keychain都变成了login.keychain-db,所以低版本	的mac上找不到login.keychian文件。
+	1.这里需要注意的是 "#获取钥匙串权限:-p" 这里填开机密码；后面的"~/Library/Keychains/login.keychain-db" 此时应该填login.keychain-db，而不是login.keychain。login.keychain-db的路径是固定的。
+	2.Mac系统10.12版本以后login.keychain都变成了login.keychain-db,所以低版本的mac上找不到login.keychian文件。
 	```
   
 > 下面贴出脚本源码供大家复制粘贴
