@@ -244,7 +244,7 @@ $ jenkins
 	3.脚本中"fir login -T 479d380eae1xxxxxxxxxx8a953a8ca27"的"479d380eae1xxxxxxxxxx8a953a8ca27"是fir的APIToken,你需要登录fir账号,鼠标移动到右上角的按钮会显示出APIToken。
 	```
   
-> 下面贴出脚本源码供大家复制粘贴（）
+> 下面贴出脚本源码供大家复制粘贴（**需要注意的部分我在脚本中也加了注释，注意看注释！**）
   
 ```shell
 #!/bin/sh -
@@ -328,7 +328,9 @@ fir publish ${IPA_EXPORT_PATH}/${APP_NAME}.ipa
 
 ### 六、开始构建
 
+![]({{site.url}}/img/jenkins/Snip20171031_8.png)
 
+![]({{site.url}}/img/jenkins/Snip20171031_10.png)
 
 
 ### 七、其他电脑控制你的mac打包上传
