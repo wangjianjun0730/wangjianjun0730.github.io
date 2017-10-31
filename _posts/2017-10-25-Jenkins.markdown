@@ -105,7 +105,7 @@ $ jenkins
 	
 	> 选择功能列表中的管理插件
 	
-	![]({{site.url}}/img/jenkins/Snip20171026_26.png)
+	![]({{site.url}}/img/jenkins/Snip20171026_27.png)
 
 	
 	> 搜索并安装下列插件
