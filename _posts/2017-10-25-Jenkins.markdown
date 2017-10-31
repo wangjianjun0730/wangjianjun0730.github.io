@@ -233,7 +233,8 @@ $ jenkins
   ```
 	需要注意和了解：
 	1.图上已经给出了plist文件的样式,需要根据你的要求修改对应的配置.
-	2.也可以用xcode打包导出后，让xcode生成ExportOptions.plist文件，我们copy出来用也行，但注意文件名要跟自动打包脚本中的保持一致，这样可以保证exportOptions.Plist不会配置错误）
+	2.脚本中"fir login -T 479d380eae1xxxxxxxxxx8a953a8ca27"的"479d380eae1xxxxxxxxxx8a953a8ca27"是fir的APIToken,你需要登录fir账号,鼠标移动到右上角的按钮会显示出APIToken。
+	3.也可以用xcode打包导出后，让xcode生成ExportOptions.plist文件，我们copy出来用也行，但注意文件名要跟自动打包脚本中的保持一致，这样可以保证exportOptions.Plist不会配置错误）
    ```
 
   ![]({{site.url}}/img/jenkins/Snip20171031_6.png)
