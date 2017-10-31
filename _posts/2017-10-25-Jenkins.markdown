@@ -119,12 +119,10 @@ $ jenkins
 	
 	3.Keychains and Provisioning Profiles Management (用于配置项目发布/测试证书)
 	
-	4.fir-plugin (打包上传fir配置)
-	
-	5.Git plugin/GitHub plugin/Git client plugin/Email Extension Plugin
+	4.Git plugin/GitHub plugin/Git client plugin/Email Extension Plugin
 	(这些插件jenkins默认已经安装，如果没有需要手动安装)
 	
-	6.Xcode integration 
+	5.Xcode integration 
 	此插件是用于Xcode配置的，这里注意不用下载
 	因为Xcode9打包流程有变化，不管用了，下了也白瞎，文章后面再讲。
 	```
